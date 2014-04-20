@@ -38,7 +38,7 @@ IS_DOWN=0
 FIRST_DOWN=0
 
 function main () {
-	NEW_IP=$(curl http://ipecho.net/plain 2>/dev/null)
+    NEW_IP=$(curl http://ipecho.net/plain 2>/dev/null)
     # If you are connected to the internet...
     if ping -W 200 -c 1 google.com >/dev/null; then
         # If the internet just got back, display a message.
