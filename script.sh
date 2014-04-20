@@ -6,7 +6,7 @@
 # Title: dns-updater                                                  #
 # License: MIT                                                        #
 # Description: A tool for connections with dynamic IP                 #
-#              adresses that checks for a new IP value and uses       #
+#              adresseses that checks for a new IP value and uses     #
 #              the DigitalOcean API to update a domain record,        #
 #              such as homepc.yourdomain.com.                         #
 #######################################################################
