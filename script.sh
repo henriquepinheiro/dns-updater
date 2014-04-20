@@ -40,7 +40,7 @@ FIRST_DOWN=0
 function main () {
 	NEW_IP=$(curl http://ipecho.net/plain 2>/dev/null)
     # If you are connected to the internet...
-	if ping -W 200 -c 1 google.com >/dev/null; then
+    if ping -W 200 -c 1 google.com >/dev/null; then
         # If the internet just got back, display a message.
         if [ $IS_DOWN == 1 ]; then
             echo -n "Internet came back at "
@@ -49,18 +49,18 @@ function main () {
             IS_DOWN=0
         fi
         # If your IP is different from the one I had before...
-		if [ $IP != $NEW_IP ]; then
+        if [ $IP != $NEW_IP ]; then
             # Make the new one your current, notify the change and use the API to update it.
-			IP=$NEW_IP
-			echo "Your IP changed. It's now $NEW_IP. Updating it: "
+            IP=$NEW_IP
+            echo "Your IP changed. It's now $NEW_IP. Updating it: "
             URL="https://api.digitalocean.com/domains/$DOMAIN_ID/records/$RECORD_ID/edit?client_id=$CLIENT_ID&api_key=$API_KEY&record_type=A&data=$IP"
             curl $URL
         fi
-	else
-		internet_down
-    fi
-    dream
-    main
+    else
+      internet_down
+  fi
+  dream
+  main
 }
 
 function dream () {
